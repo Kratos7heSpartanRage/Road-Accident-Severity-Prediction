@@ -1,0 +1,7 @@
+venv/
+Road_Accident_Project.pdf
+*.csv
+
+# Ignore raw and intermediate data, but track processed parquet
+data/raw/
+data/intermediate/
