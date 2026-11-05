@@ -54,8 +54,8 @@ Failing to normalize by the denominator leads to the classic ecological fallacy 
 9. **`is_weekend`**: Distinguishes weekday commute behavior from weekend leisure driving.
 
 ### B. Critical Data Leakage Warning:
-* ⚠️ **Strictly Exclude `number_of_casualties`**: In exploratory analysis, casualties strongly correlate with severity, but casualties are an **after-the-fact outcome of the collision**, not an initial circumstance available at prediction time. Using casualties in model training causes severe data leakage.
-* ⚠️ **Exclude Post-Crash Operational Variables**: `police_force`, `pedestrian_crossing`, and site clearance variables must not be used to predict collision severity.
+* **Strictly Exclude `number_of_casualties`**: In exploratory analysis, casualties strongly correlate with severity, but casualties are an **after-the-fact outcome of the collision**, not an initial circumstance available at prediction time. Using casualties in model training causes severe data leakage.
+* **Exclude Post-Crash Operational Variables**: `police_force`, `pedestrian_crossing`, and site clearance variables must not be used to predict collision severity.
 
 ### C. Class Imbalance Mitigation Strategy:
 * **Train-Only Resampling**: If SMOTE or random undersampling is tested, it **must only be fitted on training folds** during cross-validation. Resampling before the train/test split will leak validation distributions and invalidate results.
